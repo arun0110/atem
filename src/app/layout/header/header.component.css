@@ -1,25 +1,34 @@
-.header{
-    height: 80px;
-    width: 100%;
-    border-bottom: solid orange 1px;
-    box-shadow: 1rem;
-    position: relative;
+.navbar{
+    min-height: 80px;
 }
-.logo{
-    
+.navbar-light{
+    border-bottom: solid #eb6e34 1px;
 }
-.atem{
-    font-size: 3rem;
-    padding-left: 10%;
-    color: orange;
+.btn-primary{
+    border-radius: 0%;
+    border: #eb6e34;
+    background-color: #eb6e34;
+    height: 45px;
+    width: 120px;
+    margin: 15px;
 }
-.cust-button-lite{
-    position: absolute;
-    border: solid orange 1px;
-    color: white;
-    background: orange;
-    right: 10%;
+h1{
+    color: #eb6e34;
+    font-size: 3.4rem;
+    margin-left: 10%;
 }
-.signup-login-btn{
-    align-content: flex-end;
+@media (min-width:360px) and (max-width:767px){
+    h1{
+        color: #eb6e34;
+        font-size: 3rem;
+        margin-left: 2%;
+    }
+    .btn-primary{
+        border-radius: 0%;
+        border: #eb6e34;
+        background-color: #eb6e34;
+        height: 35px;
+        width: 70px;
+        margin-right: -11px;
+    }
 }
