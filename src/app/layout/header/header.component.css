@@ -1,0 +1,25 @@
+.header{
+    height: 80px;
+    width: 100%;
+    border-bottom: solid orange 1px;
+    box-shadow: 1rem;
+    position: relative;
+}
+.logo{
+    
+}
+.atem{
+    font-size: 3rem;
+    padding-left: 10%;
+    color: orange;
+}
+.cust-button-lite{
+    position: absolute;
+    border: solid orange 1px;
+    color: white;
+    background: orange;
+    right: 10%;
+}
+.signup-login-btn{
+    align-content: flex-end;
+}
