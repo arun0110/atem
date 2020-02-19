@@ -1,0 +1,15 @@
+.footer{
+    border-top: #eb6e34 solid 1px;
+}
+h4{
+    color: #eb6e34;
+}
+p{
+    color: #eb6e34;
+}
+@media (min-width:360px) and (max-width:767px){
+    h4{
+        color: #eb6e34;
+        font-size: 0.9rem;
+    }
+}

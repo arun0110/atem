@@ -1,0 +1,47 @@
+.banner{
+    height: 400px;
+    background-color: #eb6e34;
+    color: white;
+}
+.container-fluid{
+    background-color:#eb6e34;
+}
+.atem{
+    font-size: 11rem;
+    padding: 1rem;
+    margin-top: 3rem;
+    
+}
+.banner1-text{
+    font-size: 2.5rem;
+    padding: 3rem;
+    margin: 3rem;
+}
+.atem{
+    font-size: 11rem;
+    padding: 1rem;
+    margin-top: 3rem;
+    
+}
+.abbr{
+    
+}
+@media (min-width:360px) and (max-width:767px){
+    .banner{
+        height: 240px;
+        background-color: #eb6e34;
+        color: white;
+    }
+    .banner1-text{
+        font-size: 1.2rem;
+        padding: 1rem;
+        margin: 1rem;
+    }
+    .atem{
+        font-size: 4.4rem;
+        padding: 1rem;
+        margin-top: 3rem;
+        
+    }
+   
+}
