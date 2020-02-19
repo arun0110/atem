@@ -1,10 +1,10 @@
 .banner{
     height: 400px;
-    background-color: #eb6e34;
+    /* background-color: #eb6e34; */
     color: white;
 }
 .container-fluid{
-    background-color:#eb6e34;
+    /* background-color:#eb6e34; */
 }
 .atem{
     font-size: 11rem;
