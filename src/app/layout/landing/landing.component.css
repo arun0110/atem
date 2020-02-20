@@ -1,30 +1,81 @@
 .banner{
     height: 400px;
-    /* background-color: #eb6e34; */
+    background-color: #eb6e34;
     color: white;
 }
-.container-fluid{
-    /* background-color:#eb6e34; */
+.banner-2{
+    height: auto;
+    border-bottom: solid #eb6e34 1px;
+    background-color: white;
+}
+.card-deck{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.card-title{
+    color: #eb6e34;
+}
+.banner-3{
+    height: 400px;
+    border-bottom: solid #eb6e34 1px;
+}
+.subscribe-1{
+    height: 400px;
+    background-color: #eb6e34;
+    margin-top: 0%;
+    margin-left: 0%;
+    padding: 3%;
+}
+.subscribe-2{
+    height: 400px;
+    background-color: white;
+}
+.price{
+    font-size: 8rem;
+    color: #eb6e34;
+}
+.price-box{
+    margin-left: 34%;
+}
+.perMonth{
+    font-size: 2.5rem;
+    color: #eb6e34;
+    margin-top: -8%;
+}
+.cancel{
+    font-size: 4rem;
+    color: #eb6e34;
+    margin-top: 8%;
+    margin-left: 20%;
 }
 .atem{
     font-size: 11rem;
     padding: 1rem;
     margin-top: 3rem;
-    
+    color: white;
 }
 .banner1-text{
     font-size: 2.5rem;
     padding: 3rem;
     margin: 3rem;
+    color: white;
 }
-.atem{
-    font-size: 11rem;
-    padding: 1rem;
-    margin-top: 3rem;
-    
+.col-2{
+    color: #eb6e34;
+    margin-top: 3%;
+    margin-right: 1%;
+    border: solid black 1px;
+    height: 300px;
+    /* background-color: #f07035; */
 }
-.abbr{
-    
+h1{
+    color: #eb6e34; 
+}
+h2{
+    margin-left: 3%;
+    color: white; 
+    padding: 1%;
+    font-size: 1.5rem;
 }
 @media (min-width:360px) and (max-width:767px){
     .banner{
@@ -43,5 +94,36 @@
         margin-top: 3rem;
         
     }
-   
+    .price{
+        font-size: 4rem;
+        color: #eb6e34;
+    }
+    .price-box{
+        margin-left: 20%;
+        margin-top: 30%;
+    }
+    .perMonth{
+        font-size: 1.5rem;
+        color: #eb6e34;
+        margin-top: -20%;
+    }
+    .cancel{
+        font-size: 2rem;
+        color: #eb6e34;
+        margin-top: 8%;
+        margin-left: 10%;
+    }
+    .subscribe-1{
+        height: 400px;
+        background-color: #eb6e34;
+        margin-top: 0%;
+        margin-left: 0%;
+        padding: 2%;
+    }
+    h2{
+        margin-left: 3%;
+        color: white; 
+        padding: 5%;
+        font-size: 1.0rem;
+    }
 }
