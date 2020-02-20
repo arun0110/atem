@@ -1,0 +1,54 @@
+.container-fluid{
+    overflow:auto;
+    padding-bottom:100px;
+}
+.contact-us-title{
+    color: #eb6e34;
+}
+i{
+    color: #eb6e34;
+    font-size: 2rem;
+    margin: 1%
+}
+.fa-map-marker{
+    font-size: 2rem;
+}
+.fa-mobile{
+    font-size: 2.6rem;
+}
+.fa-envelope{
+    font-size: 1.6rem;
+}
+label{
+    margin-bottom: -0.5rem;
+}
+input{
+    margin-bottom: 5%;
+    width: 100%;
+    border: solid #eb6e34 1px;
+}
+input:focus {
+    outline:none !important;
+}
+textarea{
+    margin-bottom: 5%;
+    width: 100%;
+    border: solid #eb6e34 1px; 
+}
+textarea:focus {
+    outline:none !important;
+}
+.btn-primary{
+    margin: 1%;
+    border-radius: 0%;
+    border: solid #eb6e34 1px;
+    width: 50%;
+    background-color: #eb6e34;
+    color: white;
+    float: right;
+}
+.card{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding: 1%;
+}

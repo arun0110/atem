@@ -1,1 +1,39 @@
-<p>contact-us works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <div class="card-deck">
+                <div class="card">
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-10">
+                            <h3 class="text-uppercase contact-us-title">Address</h3>
+                            <h6 class="mb-3">Contact us and we'll get back to you within 24 hours.</h6>
+                            <h6><i class="fa fa-map-marker" aria-hidden="true"></i> Hyderabad, India</h6>
+                            <h6><i class="fa fa-mobile" aria-hidden="true"></i>      +91 7032797026</h6>
+                            <h6><i class="fa fa-envelope" aria-hidden="true"></i>support@atem.in</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-9">
+                            <h3 class="text-uppercase contact-us-title">contact us</h3>
+                            <form [formGroup]="contactUsForm" (ngSubmit)="onSubmit()">
+                                <label class="font-weight-normal">FullName</label>
+                                <input type="text" formControlName="fullName">
+                                <label class="font-weight-normal">e-mail</label>
+                                <input type="text" formControlName="email">
+                                <label class="font-weight-normal">Comment</label>
+                                <textarea type="textarea" rows=5 formControlName="comment"></textarea>
+                                <button class="btn btn-primary" type="submit" [disabled]="!contactUsForm.valid">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>   
+        <div class="col-1"></div>
+    </div>
+</div>
