@@ -1,0 +1,63 @@
+.container-fluid{
+    overflow:auto;
+    padding-bottom:100px;
+}
+label{
+    text-align: left;
+    font-size: 1.0rem;
+    letter-spacing: .3px;
+    color: #000;
+    margin-bottom: .1rem;
+}
+input{
+    width: 90%;
+    border: solid #eb6e34 1px;
+    border-radius: 0%;
+}
+select{
+    width: 90%;
+    border: solid #eb6e34 1px;
+    border-radius: 0%;
+}
+.btn-primary{
+    width: 25%;
+    margin: 1%;
+    padding: 1%;
+    background-color: #eb6e34;
+    color: white;
+    border: solid #eb6e34 1px;
+    border-radius: 0%;
+}
+.btn-secondary{
+    width: 25%;
+    margin: 1%;
+    padding: 1%;
+    background-color: white;
+    color: #eb6e34;
+    border: solid #eb6e34 1px;
+    border-radius: 0%;
+}
+.card{
+    margin: 5%;
+    padding: 1%;
+}
+.signin-text{
+    padding: 1%;
+    margin: 1%;
+    color: #eb6e34;
+}
+a{
+    margin: 1%;
+    color: black;
+}
+a:hover{
+    color:  #eb6e34;
+}
+@media (min-width:360px) and (max-width:767px){
+    input{
+        width: 100%;
+    }
+    select{
+        width: 100%;
+    }
+}

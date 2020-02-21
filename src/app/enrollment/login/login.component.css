@@ -1,0 +1,80 @@
+.container-fluid{
+    overflow:auto;
+    padding-bottom:100px;
+}
+input{
+    margin-bottom: 2%;
+    margin-left: 25%;
+    margin-right: 10%;
+    width: 45%;
+    height: 35px;
+    border: solid #eb6e34 1px;
+}
+.btn-primary{
+    font-size: 1rem;
+    border-radius: 0%;
+    margin-top: 1rem;
+    margin-bottom: 3%;
+    margin-left: 25%;
+    margin-right: 10%;
+    width: 45%;
+    height: 40px;
+    border: solid #eb6e34 1px;
+    background-color: #eb6e34;
+    color: white;
+}
+.login-text{
+    margin-left: 25%;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    color: #eb6e34;
+}
+.card{
+    margin-top: 5%;
+    padding-bottom: 5%;
+}
+.options{
+    margin-left: 25%;
+}
+.forgot-password{
+    margin-right: 8rem;
+    margin-bottom: 1rem;
+}
+.new-to-atem{
+    margin-left: 9rem;
+    margin-bottom: 1rem;
+}
+.label{
+    margin-left: 25%;
+}
+a{
+    color: black;
+}
+a:hover{
+    color:  #eb6e34;
+}
+@media (min-width:360px) and (max-width:767px){
+    input{
+        margin-left: 0%;
+        width: 100%;
+    }
+    .btn-primary{
+        margin-bottom: 5%;
+        margin-left: 0%;
+        width: 100%;
+    }
+    .label{
+        margin-left: 0%;
+    }
+    .options{
+        margin-left: 0%;
+    }
+    .forgot-password{
+        margin-right: 1rem;
+        margin-bottom: 2rem;
+    }
+    .new-to-atem{
+        margin-left: 4rem;
+        margin-bottom: 2rem;
+    }
+}
