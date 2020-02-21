@@ -20,23 +20,23 @@ i{
     font-size: 1.6rem;
 }
 label{
-    margin-bottom: -0.5rem;
+    text-align: left;
+    font-size: 1.0rem;
+    letter-spacing: .3px;
+    color: #000;
+    margin-bottom: .1rem;
 }
 input{
-    margin-bottom: 5%;
+    border-radius: 0%;
+    /* margin-bottom: 5%; */
     width: 100%;
-    border: solid #eb6e34 1px;
-}
-input:focus {
-    outline:none !important;
+    border: solid black 1px;
 }
 textarea{
-    margin-bottom: 5%;
+    border-radius: 0%;
+    /* margin-bottom: 5%; */
     width: 100%;
-    border: solid #eb6e34 1px; 
-}
-textarea:focus {
-    outline:none !important;
+    border: solid black 1px; 
 }
 .btn-primary{
     margin: 1%;
@@ -50,5 +50,21 @@ textarea:focus {
 .card{
     margin-top: 5%;
     margin-bottom: 5%;
-    padding: 1%;
+    padding: 3%;
+}
+span{
+    color: red;
+    font-size: 1rem;
+}
+small{
+    color: red;
+}
+button:disabled {
+    cursor: not-allowed;
+    pointer-events: all !important;
+}
+@media (min-width:360px) and (max-width:767px){
+    .card{
+        padding: 5%;
+    }
 }

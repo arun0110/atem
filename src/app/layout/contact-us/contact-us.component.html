@@ -7,7 +7,7 @@
                     <div class="row">
                         <div class="col-1"></div>
                         <div class="col-10">
-                            <h3 class="text-uppercase contact-us-title">Address</h3>
+                            <h3 class="text-uppercase contact-us-title d-flex justify-content-center m-2">Address</h3>
                             <h6 class="mb-3">Contact us and we'll get back to you within 24 hours.</h6>
                             <h6><i class="fa fa-map-marker" aria-hidden="true"></i> Hyderabad, India</h6>
                             <h6><i class="fa fa-mobile" aria-hidden="true"></i>      +91 7032797026</h6>
@@ -18,16 +18,49 @@
                 <div class="card">
                     <div class="row">
                         <div class="col-1"></div>
-                        <div class="col-9">
-                            <h3 class="text-uppercase contact-us-title">contact us</h3>
+                        <div class="col-10">
+                            <h3 class="text-uppercase signin-text d-flex justify-content-center contact-us-title">
+                                contact us
+                            </h3>
                             <form [formGroup]="contactUsForm" (ngSubmit)="onSubmit()">
-                                <label class="font-weight-normal">FullName</label>
-                                <input type="text" formControlName="fullName">
-                                <label class="font-weight-normal">e-mail</label>
-                                <input type="text" formControlName="email">
-                                <label class="font-weight-normal">Comment</label>
-                                <textarea type="textarea" rows=5 formControlName="comment"></textarea>
-                                <button class="btn btn-primary" type="submit" [disabled]="!contactUsForm.valid">Submit</button>
+                                <div class="form-group">
+                                    <label for="fullName">FullName<span>*</span></label>
+                                    <input id="fullName" type="text" class="form-control" formControlName="fullName">
+                                    <small class="form-text" 
+                                    *ngIf="contactUsForm?.controls.fullName?.errors?.required &&
+                                    contactUsForm?.controls.fullName?.touched">
+                                    FullName required</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">e-mail<span>*</span></label>
+                                    <input id="email" type="text" class="form-control" formControlName="email">
+                                    <small class="form-text" 
+                                    *ngIf="contactUsForm?.controls.email?.errors?.required &&
+                                    contactUsForm?.controls.email?.touched">
+                                    Email address required</small>
+                                    <small class="form-text" 
+                                    *ngIf="contactUsForm?.controls.email?.errors?.maxlength">
+                                    Maximum characters exceeded</small>
+                                    <small class="form-text" 
+                                    *ngIf="contactUsForm?.controls.email?.errors?.email &&
+                                    contactUsForm?.controls.email?.touched">
+                                    Enter correct email address</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="comment">Comment<span>*</span></label>
+                                    <textarea id="comment" type="textarea" class="form-control" rows=5 formControlName="comment"></textarea>
+                                    <small class="form-text" 
+                                    *ngIf="contactUsForm?.controls.comment?.errors?.required &&
+                                    contactUsForm?.controls.comment?.touched">
+                                    Comment required</small>
+                                    <small class="form-text" 
+                                    *ngIf="contactUsForm?.controls.comment?.errors?.minlength">
+                                    Enter with in 10-500 characters</small>
+                                    <small class="form-text" 
+                                    *ngIf="contactUsForm?.controls.comment?.errors?.maxlength">
+                                    Enter with in 10-500 characters</small>
+                                </div>
+                                <button class="btn btn-primary" type="submit" [disabled]="!contactUsForm.valid">SEND</button>
                             </form>
                         </div>
                     </div>

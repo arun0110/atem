@@ -1,25 +1,37 @@
-<div class="container-fluid d-flex justify-content-center">
-    <div class="row w-100">
+<div class="container-fluid">
+    <div class="row">
         <div class="col-1"></div>
         <div class="col-10">
-            <div class="card-deck">
-                <div class="card">
-                    <div class="row">
-                        <div class="col-1"></div>
-                        <div class="col-10">
-                            <h1 class="login-text text-uppercase">Log in</h1>
-                            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-                                <h6 class="label">UserName</h6>
-                                <input type="text" formControlName="username">
-                                <h6 class="label">Password</h6>
-                                <input type="password" formControlName="password">
-                                <button class="btn btn-primary" type="submit"
-                                    [disabled]="!loginForm.valid">LOG IN</button>
-                            </form>
-                            <div class="options d-inline-flex">
-                                <a routerLink="/forgot-password"><h6 class="forgot-password">Forgot Password?</h6></a>
-                                <a routerLink="/signin"><h6 class="new-to-atem">New to ATEM?</h6></a>
+            <div class="card">
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h1 class="text-uppercase login-text d-flex justify-content-center">Log in</h1>
+                        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                            <div class="form-group">
+                                <label for="username">UserName<span>*</span></label>
+                                <input id="username" class="form-control" type="text" formControlName="username">
+                                <small class="form-text" 
+                                    *ngIf="loginForm?.controls.username?.errors?.required &&
+                                    loginForm?.controls.username?.touched">
+                                    UserName is required</small>
                             </div>
+                            <div class="form-group">
+                                <label for="password">Password<span>*</span></label>
+                                <input id="password" class="form-control" type="password" formControlName="password">
+                                <small class="form-text" 
+                                    *ngIf="loginForm?.controls.password?.errors?.required &&
+                                    loginForm?.controls.password?.touched">
+                                    Password is required</small>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-primary" type="submit"
+                                [disabled]="!loginForm.valid">LOG IN</button>
+                            </div>
+                        </form>
+                        <div class="options d-inline-flex form-group">
+                            <a routerLink="/forgot-password"><h6 class="forgot-password mr-4">Forgot Password?</h6></a>
+                            <a routerLink="/signin"><h6 class="new-to-atem ml-5">New to ATEM?</h6></a>
                         </div>
                     </div>
                 </div>

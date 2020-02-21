@@ -7,32 +7,62 @@
                     <div class="col-1"></div>
                     <div class="col-10">
                         <h1 class="text-uppercase signin-text d-flex justify-content-center">sign in</h1>
-                        <form>
+                        <form [formGroup] = "signInForm">
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="firstName">FirstName</label>
-                                    <input type="text" class="form-control" id="firstName">
+                                    <label for="firstName">FirstName<span>*</span></label>
+                                    <input type="text" class="form-control" id="firstName" formControlName="firstName">
+                                    <small class="form-text" 
+                                    *ngIf="signInForm?.controls.firstName?.errors?.required &&
+                                    signInForm?.controls.firstName?.touched">
+                                    FirstName is required</small>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="lastName">LastName</label>
-                                    <input type="text" class="form-control" id="lastName">
+                                    <label for="lastName">LastName<span>*</span></label>
+                                    <input type="text" class="form-control" id="lastName" formControlName="lastName">
+                                    <small class="form-text" 
+                                    *ngIf="signInForm?.controls.lastName?.errors?.required &&
+                                    signInForm?.controls.lastName?.touched">
+                                    LastName is required</small>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="mobile">Mobile</label>
-                                    <input type="text" class="form-control" id="mobile">
+                                    <label for="mobile">Mobile<span>*</span></label>
+                                    <input type="text" class="form-control" id="mobile" formControlName="mobile">
+                                    <small class="form-text" 
+                                    *ngIf="(signInForm?.controls.mobile?.errors?.pattern ||
+                                    signInForm?.controls.mobile?.errors?.minlength ||
+                                    signInForm?.controls.mobile?.errors?.maxlength) &&
+                                    signInForm?.controls.mobile?.touched ">
+                                    Enter correct mobile number</small>
+                                    <small class="form-text" 
+                                    *ngIf="signInForm?.controls.mobile?.errors?.required &&
+                                    signInForm?.controls.mobile?.touched">
+                                    Mobile number required</small> 
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="email">Email</label>
-                                    <input type="text" class="form-control" id="email">
+                                    <label for="email">Email<span>*</span></label>
+                                    <input type="text" class="form-control" id="email" formControlName="email">
+                                    <small class="form-text" 
+                                    *ngIf="signInForm?.controls.email?.errors?.email &&
+                                    signInForm?.controls.email?.touched">
+                                    Enter correct email address</small>
+                                    <small class="form-text" 
+                                    *ngIf="signInForm?.controls.email?.errors?.minlength &&
+                                    signInForm?.controls.email?.errors?.maxlength">
+                                    Maximum characters exceeded</small>
+                                    <small class="form-text" 
+                                    *ngIf="signInForm?.controls.email?.errors?.required &&
+                                    signInForm?.controls.email?.touched">
+                                    Email address required</small> 
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="secretQuestion">Selcect Question</label>
-                                    <select type="text" class="form-control" id="secretQuestion">
-                                        <option value="0">Select Secret Question</option>
+                                    <label for="secretQuestion">Selcect Question<span>*</span></label>
+                                    <select type="text" class="form-control" id="secretQuestion" formControlName="secretQuestion">
+                                        <option value="" disabled selected>Select Secret Question</option>
                                         <option value="What is the name of the town/city/village where you were born?">
                                             What is the name of the town/city/village where you were born?
                                         </option>
@@ -48,21 +78,33 @@
                                         <option value="What is your favorite food?">
                                             What is your favorite food?
                                         </option>
-                                        <option value="What is your pet name? ">
+                                        <option value="What is your pet name?">
                                             What is your pet name? 
                                         </option>
                                     </select>
+                                    <small class="form-text" 
+                                    *ngIf="signInForm?.controls.secretQuestion?.errors?.required &&
+                                    signInForm?.controls.secretQuestion?.touched">
+                                    Secret question required</small>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="secretAnswer">Select Answer</label>
-                                    <input type="text" class="form-control" id="secretAnswer">
+                                    <label for="secretAnswer">Select Answer<span>*</span></label>
+                                    <input type="text" class="form-control" id="secretAnswer" formControlName="secretAnswer">
+                                    <small class="form-text" 
+                                    *ngIf="signInForm?.controls.secretAnswer?.errors?.required &&
+                                    signInForm?.controls.secretAnswer?.touched">
+                                    Secret answer required</small>
+                                    <small class="form-text" 
+                                    *ngIf="signInForm?.controls.secretAnswer?.errors?.minlength ||
+                                    signInForm?.controls.secretAnswer?.errors?.maxlength">
+                                    Enter with in 1-30 characters</small>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="qualification">Qualification</label>
-                                    <select type="text" class="form-control" id="qualification">
-                                        <option value="0">Select your Qualification</option>
+                                    <label for="qualification">Qualification<span>*</span></label>
+                                    <select type="text" class="form-control" id="qualification" formControlName="qualification">
+                                        <option value="" disabled selected>Select your Qualification</option>
                                         <option value="Class 10">Class 10</option>
                                         <option value="10+2 or Equivalent">10+2 or Equivalent</option>
                                         <option value="Diploma">Diploma</option>
@@ -72,31 +114,61 @@
                                         <option value="Master's or Equivalent">Master's or Equivalent</option>
                                         <option value="other">Other</option>
                                     </select>
+                                    <small class="form-text" 
+                                    *ngIf="signInForm?.controls.qualification?.errors?.required &&
+                                    signInForm?.controls.qualification?.touched">
+                                    Qualification required</small>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="userName">UserName</label>
-                                    <input type="text" class="form-control" id="userName">
+                                    <label for="userName">UserName<span>*</span></label>
+                                    <input type="text" class="form-control" id="userName" formControlName="userName">
+                                    <small class="form-text" 
+                                    *ngIf="signInForm?.controls.userName?.errors?.required &&
+                                    signInForm?.controls.userName?.touched">
+                                    UserName required</small>
+                                    <small class="form-text" 
+                                    *ngIf="signInForm?.controls.userName?.errors?.minlength ||
+                                    signInForm?.controls.userName?.errors?.maxlength">
+                                    Enter with in 1-30 characters</small>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="password">Password</label>
-                                    <input type="text" class="form-control" id="password">
+                                    <label for="password">Password<span>*</span></label>
+                                    <input type="password" class="form-control" id="password" formControlName="password">
+                                    <small class="form-text" 
+                                    *ngIf="signInForm?.controls.password?.errors?.required &&
+                                    signInForm?.controls.password?.touched">
+                                    Password required</small>
+                                    <small class="form-text" 
+                                    *ngIf="signInForm?.controls.password?.errors?.minlength ||
+                                    signInForm?.controls.password?.errors?.maxlength">
+                                    Enter with in 8-20 characters</small>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="confirmPassword">Confirm Password</label>
-                                    <input type="text" class="form-control" id="confirmPassword">
+                                    <label for="confirmPassword">Confirm Password<span>*</span></label>
+                                    <input type="password" class="form-control" id="confirmPassword" 
+                                    formControlName="confirmPassword" (ngModelChange) = "confirmPasswordMatching($event)" >
+                                    <small class="form-text" 
+                                    *ngIf="signInForm?.controls.confirmPassword?.errors?.required &&
+                                    signInForm?.controls.confirmPassword?.touched">
+                                    Confirm password required</small>
+                                    <small class="form-text" 
+                                    *ngIf="!passwordMatched && signInForm?.controls.confirmPassword?.touched">
+                                    Confirm password not matched</small>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="referralCode">Referral Code</label>
-                                    <input type="text" class="form-control" id="referralCode">
+                                    <input type="text" class="form-control" id="referralCode" formControlName="referralCode">
                                 </div>    
                             </div>
                             <div class="d-flex justify-content-center">
-                                <button class="btn btn-secondary text-uppercase">reset</button>
-                                <button class="btn btn-primary text-uppercase">sign in</button>
+                                <button type="submit" class="btn btn-secondary text-uppercase" (click)="onReset()">reset</button>
+                                <button class="btn btn-primary text-uppercase"
+                                [disabled]="!signInForm.valid && !passwordMatched"
+                                (click)="onSubmit()">sign in</button>
                             </div>
                             <div class="already-member">
                                 <a routerLink="/forgot-password" class="d-flex justify-content-center">Already member of ATEM?</a>

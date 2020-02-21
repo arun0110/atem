@@ -11,13 +11,23 @@ label{
 }
 input{
     width: 90%;
-    border: solid #eb6e34 1px;
+    border: solid black 1px;
     border-radius: 0%;
 }
 select{
     width: 90%;
-    border: solid #eb6e34 1px;
+    border: solid black 1px;
     border-radius: 0%;
+}
+input:focus {
+    outline:none !important;
+}
+select:focus {
+    outline:none !important;
+}
+select option:hover{
+    border: solid #eb6e34 1px;
+    background: #eb6e34;
 }
 .btn-primary{
     width: 25%;
@@ -60,4 +70,11 @@ a:hover{
     select{
         width: 100%;
     }
+}
+span{
+    color: red;
+    font-size: 1rem;
+}
+small{
+    color: red;
 }
