@@ -7,6 +7,9 @@ import { Validators, FormGroup, FormControl, FormBuilder} from '@angular/forms';
   styleUrls: ['./contact-us.component.css']
 })
 export class ContactUsComponent implements OnInit {
+
+  formSubmitted = false;
+  sentSuccess = false;
   contactUsForm = this.fb.group({
     fullName: ['', [Validators.required, Validators.maxLength(30)]],
     email: ['', [Validators.required, Validators.email, Validators.maxLength(30)]],
@@ -20,6 +23,11 @@ export class ContactUsComponent implements OnInit {
   }
 
   onSubmit(): void{
-    console.log(this.contactUsForm.value);
+    console.log(this.contactUsForm)
+    this.formSubmitted = true;
+    this.sentSuccess = true;
+  }
+  formToModelMapping(): void{
+
   }
 }

@@ -7,6 +7,7 @@ import { PageNotFoundComponent } from './layout/page-not-found/page-not-found.co
 import { LoginComponent } from './enrollment/login/login.component';
 import { SigninComponent } from './enrollment/signin/signin.component';
 import { ForgotPasswordComponent } from './enrollment/forgot-password/forgot-password.component';
+import { DashboardComponent } from './home/dashboard/dashboard.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'signin', component: SigninComponent},
   {path: 'forgot-password', component: ForgotPasswordComponent},
+  {path: 'home', component: DashboardComponent},
   {path: '**', component: PageNotFoundComponent}
 ];
 

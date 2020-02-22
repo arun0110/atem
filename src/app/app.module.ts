@@ -12,6 +12,8 @@ import { PageNotFoundComponent } from './layout/page-not-found/page-not-found.co
 import { LoginComponent } from './enrollment/login/login.component';
 import { SigninComponent } from './enrollment/signin/signin.component';
 import { ForgotPasswordComponent } from './enrollment/forgot-password/forgot-password.component';
+import { DashboardComponent } from './home/dashboard/dashboard.component';
+import { ProfileComponent } from './home/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { ForgotPasswordComponent } from './enrollment/forgot-password/forgot-pas
     PageNotFoundComponent,
     LoginComponent,
     SigninComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    DashboardComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

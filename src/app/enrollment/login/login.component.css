@@ -49,7 +49,17 @@ button:disabled {
     cursor: not-allowed;
     pointer-events: all !important;
 }
+.alert{
+    margin-left: 30%;
+    width: 36%;
+    border-radius: 0%;
+    border: solid #eb6e34 1px;
+}
 @media (min-width:360px) and (max-width:767px){
+    .alert{
+        margin-left: 0%;
+        width: 100%;
+    }
     input{
         width: 100%;
     }
