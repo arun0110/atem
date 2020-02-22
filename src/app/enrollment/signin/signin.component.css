@@ -60,8 +60,30 @@ a{
     margin: 1%;
     color: black;
 }
+h6{
+    margin: 1%;
+    margin-left: 20%;
+    padding: 2%;
+}
+h6 a{
+    margin: 0%;
+    margin-left: 1%;
+    color: #eb6e34;
+    cursor: pointer;
+}
 a:hover{
     color:  #eb6e34;
+}
+button:disabled {
+    cursor: not-allowed;
+    pointer-events: all !important;
+}
+span{
+    color: red;
+    font-size: 1rem;
+}
+small{
+    color: red;
 }
 @media (min-width:360px) and (max-width:767px){
     input{
@@ -70,11 +92,17 @@ a:hover{
     select{
         width: 100%;
     }
-}
-span{
-    color: red;
-    font-size: 1rem;
-}
-small{
-    color: red;
+    .col-1{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .col-10 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    h6{
+        font-size: 0.8rem;
+        margin: 1%;
+        margin-left: 2%;
+    }
 }

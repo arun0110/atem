@@ -67,4 +67,12 @@ button:disabled {
     .card{
         padding: 5%;
     }
+    .col-1{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .col-10 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
 }

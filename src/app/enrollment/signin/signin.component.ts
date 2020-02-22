@@ -29,6 +29,7 @@ export class SigninComponent implements OnInit {
       Validators.minLength(1),
       Validators.maxLength(30)]],
     password: ['', [Validators.required,
+    Validators.pattern(/^(?=.*[A-Z])(?=.*[!@#\$%\^&\*])(?=.{9,})/),
     Validators.minLength(8),
     Validators.maxLength(20)]],
     confirmPassword: ['', [Validators.required]],
@@ -42,7 +43,10 @@ export class SigninComponent implements OnInit {
     console.log(this.signInForm);
   }
   onReset(): void {
-    console.log('reset');
+    console.log('reset')
+    this.signInForm.markAsPristine();
+    this.signInForm.markAsTouched();
+    this.signInForm.reset();
   }
   confirmPasswordMatching(confirmPassword): void {
       this.passwordMatched = confirmPassword === this.signInForm.value.password;

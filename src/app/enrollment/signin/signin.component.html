@@ -60,7 +60,7 @@
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="secretQuestion">Selcect Question<span>*</span></label>
+                                    <label for="secretQuestion">Secret Question<span>*</span></label>
                                     <select type="text" class="form-control" id="secretQuestion" formControlName="secretQuestion">
                                         <option value="" disabled selected>Select Secret Question</option>
                                         <option value="What is the name of the town/city/village where you were born?">
@@ -88,7 +88,7 @@
                                     Secret question required</small>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="secretAnswer">Select Answer<span>*</span></label>
+                                    <label for="secretAnswer">Secret Answer<span>*</span></label>
                                     <input type="text" class="form-control" id="secretAnswer" formControlName="secretAnswer">
                                     <small class="form-text" 
                                     *ngIf="signInForm?.controls.secretAnswer?.errors?.required &&
@@ -144,6 +144,10 @@
                                     *ngIf="signInForm?.controls.password?.errors?.minlength ||
                                     signInForm?.controls.password?.errors?.maxlength">
                                     Enter with in 8-20 characters</small>
+                                    <small class="form-text" 
+                                    *ngIf="signInForm?.controls.password?.errors?.pattern">
+                                    At least one uppercase letter, one lowercase letter, one number and 
+                                    one special character required</small>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="confirmPassword">Confirm Password<span>*</span></label>
@@ -162,16 +166,25 @@
                                 <div class="form-group col-md-6">
                                     <label for="referralCode">Referral Code</label>
                                     <input type="text" class="form-control" id="referralCode" formControlName="referralCode">
-                                </div>    
+                                </div>   
                             </div>
+       
+                            <h6>
+                                By clicking "SIGN IN" you are agree to
+                                <a class="pointer" data-toggle="modal" data-target="#privacy-policy-modal">Terms and Privacy Policy.</a>
+                            </h6>
                             <div class="d-flex justify-content-center">
-                                <button type="submit" class="btn btn-secondary text-uppercase" (click)="onReset()">reset</button>
+                                <button type="submit" class="btn btn-secondary text-uppercase" 
+                                    [disabled]="!signInForm.touched"
+                                    (click)="onReset()">
+                                    reset
+                                </button>
                                 <button class="btn btn-primary text-uppercase"
                                 [disabled]="!signInForm.valid && !passwordMatched"
                                 (click)="onSubmit()">sign in</button>
                             </div>
                             <div class="already-member">
-                                <a routerLink="/forgot-password" class="d-flex justify-content-center">Already member of ATEM?</a>
+                                <a routerLink="/login" class="d-flex justify-content-center">Already member of ATEM?</a>
                             </div>
                         </form>
                     </div>
@@ -180,3 +193,45 @@
         </div>
     </div>
 </div>
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="privacy-policy-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title d-flex justify-content-center" id="exampleModalLongTitle">Terms and Privacy Policy</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <p>
+                <b>IMPORTANT! PLEASE CAREFULLY READ THESE TERMS OF USE, AS THEY AFFECT YOUR LEGAL RIGHTS AND OBLIGATIONS.</b> These <b>ATEM</b> Terms of Use ("Terms of Use") apply to the web sites, mobile apps, applications and other interactive features or services that post a link to these Terms of Use.
+                These Terms of Use govern your use of the Services, regardless of how you access them, whether by computer, mobile device, or otherwise; and whether directly through our Services, or through any third-party website that links to them ("<b>Linked Services</b>"), and regardless of whether you are a registered user or a guest. <b>By using the Services, you agree to the Terms of Use. If you do not agree to the Terms of Use, you are not authorized to use the Services and you must cease all such use immediately.</b>
+                </p><h4><b>Account Registration &amp; Termination</b></h4>
+                ATEM provides a variety of services, both for learning and earning, designed to enhance the knowledge and help users to earn money. You may not create or use more than one account, and you may not share your account or any of the Services with others. All information you provide to create an account must be accurate and complete. You may not impersonate any other person or use a name that is not your own. It is your responsibility to update your account information to keep it current and accurate. When you set up an account, you must also choose a password. You are solely responsible for maintaining the confidentiality of your password, and for any and all use of your account. You agree not to use the account, username, or password of another user at any time, nor to disclose your password to any third-party. You agree you will not sell or share or otherwise transfer your membership or any membership rights. You agree to notify ATEM immediately if you suspect any unauthorized use of your account or access to your password. ATEM has the right to terminate your account for any reason at our sole discretion without notice to you.
+                <h4><b>Your License to Use ATEM services</b></h4>
+
+                Subject to your compliance with these Terms of Use, ATEM grants you a limited, personal, non-exclusive, non-commercial, revocable and non-transferable license to use ATEM services. You may only use the Services for your own personal use. You agree not to view, copy, or procure content or information from the Services by automated means (such as scripts, bots, spiders, crawlers, or scrapers), or to use other data mining technology or processes to frame, mask, extract data.
+
+                You are strictly restricted to share your subscription with any other person. If found subscription will be cancelled and account will be terminated.
+
+
+
+                <h4><b>Account Cancellation</b></h4>
+                You may request cancellation of your account at any time throughout your use of our Services. To the fullest extent permissible under applicable law, your account will only be cancelled and closed after all transactions have been processed including payment or the cashing of any refund check, if applicable. ATEM may cancel your account in its sole discretion any reason, including but not limited to inactivity or misuse. Even if your account is cancelled, your photos, bibliographic and citation information, comments and any other data you have shared via the Services may persist within the Service after cancellation of your account (for example, if your content has been re shared by others).
+
+                <h4><b>Payments and Payment Processing</b></h4>
+
+                ATEM receives the payments as per its available payment method. The payment method includes both cash payments to the authorized persons of ATEM, online payment methods provided by ATEM. Other than these any transaction made by users will not be considered and company is not responsible for any discrepancies.
+
+                ATEM process all its payments through online mode of payments only. Users should provide correct details of their bank A/C details and incase of mobile wallets users should specify correct information regarding their wallet accounts.
+            <p></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>

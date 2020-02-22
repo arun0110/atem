@@ -1,7 +1,10 @@
+.container-fluid{
+    overflow:auto;
+    padding-bottom:40px;
+}
 .banner{
-    height: 400px;
+    height: auto;
     background-color: #eb6e34;
-    color: white;
 }
 .banner-2{
     height: auto;
@@ -19,125 +22,107 @@ img{
     padding: 1%;
 }
 .banner-3{
-    height: 400px;
-    border-bottom: solid #eb6e34 1px;
+    height: auto;
 }
 .subscribe-1{
-    height: 400px;
+    color: white;
+    padding: 5%;
+    margin: 0%;
     background-color: #eb6e34;
-    margin-top: 0%;
-    margin-left: 0%;
-    padding: 3%;
 }
 .subscribe-2{
-    height: 400px;
+    padding: 5%;
+    margin: 0%;
     background-color: white;
+}
+.subc-plans{
+    padding: 2%;
 }
 .price{
     font-size: 8rem;
     color: #eb6e34;
 }
 .price-box{
-    margin-left: 34%;
+    /* margin-left: 34%; */
 }
 .perMonth{
     font-size: 2.5rem;
     color: #eb6e34;
-    margin-top: -8%;
+    margin-top: -6%;
 }
 .cancel{
     font-size: 4rem;
     color: #eb6e34;
-    margin-top: 8%;
-    margin-left: 20%;
+}
+.big-title{
+    padding: 4%;
+    margin: 4%;
 }
 .atem{
     font-size: 11rem;
-    padding: 1rem;
+    /* padding: 1rem;
     margin-top: 3rem;
-    margin-left: 6rem;
+    margin-left: 6rem; */
     color: white;
 }
 .abbr{
     font-size: 2.75rem;
-    margin-top: -3rem;
-    margin-left: 7rem;
+    color: white;
+    /* margin-top: -3rem;
+    margin-left: 7rem; */
 }
 .banner1-text{
+    margin: 8%;
+    padding: 6%;
     font-size: 2.5rem;
-    padding: 3rem;
-    margin: 3rem;
+    /* padding: 3rem;
+    margin: 3rem; */
     color: white;
 }
-.col-2{
-    color: #eb6e34;
-    margin-top: 3%;
-    margin-right: 1%;
-    border: solid black 1px;
-    height: 300px;
-    /* background-color: #f07035; */
-}
-h1{
-    color: #eb6e34; 
-}
-h2{
-    margin-left: 3%;
-    color: white; 
+i{
     padding: 1%;
-    font-size: 1.5rem;
+    color: white;
 }
+
 @media (min-width:360px) and (max-width:767px){
-    .banner{
-        height: 240px;
-        background-color: #eb6e34;
-        color: white;
-    }
     .banner1-text{
         font-size: 1.2rem;
-        padding: 1rem;
-        margin: 1rem;
     }
     .atem{
-        font-size: 4.4rem;
-        padding: 1rem;
-        margin-top: 2rem;
-        margin-left: -1rem;       
+        font-size: 4.2rem;     
     }
     .abbr{
-        font-size: 1.0rem;
-        margin-top: -2rem;
-        margin-left: 0rem;
+        font-size: 1.7rem;
     }
     .price{
         font-size: 4rem;
         color: #eb6e34;
     }
-    .price-box{
-        margin-left: 20%;
-        margin-top: 30%;
-    }
     .perMonth{
         font-size: 1.5rem;
         color: #eb6e34;
-        margin-top: -20%;
     }
     .cancel{
         font-size: 2rem;
         color: #eb6e34;
-        margin-top: 8%;
-        margin-left: 10%;
     }
     .subscribe-1{
-        height: 400px;
+        color: white;
         background-color: #eb6e34;
-        margin-top: 0%;
-        margin-left: 0%;
-        padding: 2%;
     }
-    h2{
-        margin-left: 3%;
-        color: white; 
-        padding: 5%;
+    .col-1{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .col-10 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .card{
+        margin: 5%;
+    }
+    .subc-plans{
         font-size: 1.0rem;
+        padding: 2%;
     }
 }

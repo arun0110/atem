@@ -6,6 +6,7 @@ import { LandingComponent } from './layout/landing/landing.component';
 import { PageNotFoundComponent } from './layout/page-not-found/page-not-found.component';
 import { LoginComponent } from './enrollment/login/login.component';
 import { SigninComponent } from './enrollment/signin/signin.component';
+import { ForgotPasswordComponent } from './enrollment/forgot-password/forgot-password.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'contact-us', component: ContactUsComponent},
   {path: 'login', component: LoginComponent},
   {path: 'signin', component: SigninComponent},
+  {path: 'forgot-password', component: ForgotPasswordComponent},
   {path: '**', component: PageNotFoundComponent}
 ];
 

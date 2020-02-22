@@ -8,12 +8,32 @@ h1{
 }
 h4{
     color: #eb6e34;
-   
+    padding-top: 1%;
 }
-h6{
-    padding: 1%;
+h3{
+    padding-top: 1%;
+}
+p{
+    font-size: 1.4rem;
 }
 .fa-arrow-circle-right{
     color: #eb6e34;
-    padding-right: 1%;
+    padding: 0.5rem;
+}
+@media (min-width:360px) and (max-width:767px){
+    .col-2{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .col-8 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    p{
+        font-size: 1.0rem;
+    }
+    .fa-arrow-circle-right{
+        color: #eb6e34;
+        padding: 0.25rem;
+    }
 }

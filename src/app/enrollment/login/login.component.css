@@ -45,6 +45,10 @@ span{
 small{
     color: red;
 }
+button:disabled {
+    cursor: not-allowed;
+    pointer-events: all !important;
+}
 @media (min-width:360px) and (max-width:767px){
     input{
         width: 100%;
@@ -58,5 +62,13 @@ small{
         margin-bottom: 2%;
         margin-left: 2%;
         margin-right: 2%;
+    }
+    .col-1{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .col-10 {
+        flex: 0 0 100%;
+        max-width: 100%;
     }
 }

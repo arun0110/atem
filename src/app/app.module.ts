@@ -11,6 +11,7 @@ import { ContactUsComponent } from './layout/contact-us/contact-us.component';
 import { PageNotFoundComponent } from './layout/page-not-found/page-not-found.component';
 import { LoginComponent } from './enrollment/login/login.component';
 import { SigninComponent } from './enrollment/signin/signin.component';
+import { ForgotPasswordComponent } from './enrollment/forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SigninComponent } from './enrollment/signin/signin.component';
     ContactUsComponent,
     PageNotFoundComponent,
     LoginComponent,
-    SigninComponent
+    SigninComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
