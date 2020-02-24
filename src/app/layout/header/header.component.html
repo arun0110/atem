@@ -5,18 +5,9 @@
         </div>
         <div class="col-4"> 
         </div>
-        <div *ngIf="!userActive" class="col-4 d-flex justify-content-end">
+        <div class="col-4 d-flex justify-content-end">
             <a routerLink="/login" ><button class="btn btn-primary text-uppercase">login</button></a>
             <a routerLink="/signin" ><button class="btn btn-primary text-uppercase">signin</button></a>
-        </div>
-        <div *ngIf="userActive" class="dropdown col-4 d-flex justify-content-end">
-            <h4 class="user" id="dropdownMenuButton" 
-            data-toggle="dropdown" aria-haspopup="true" 
-            aria-expanded="false">{{user}}</h4>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" routerLink="/profile">My Profile</a>
-                <a class="dropdown-item" (click)="logout()">Logout</a>
-              </div>
         </div>
     </div>
 </nav>

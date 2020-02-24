@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -12,8 +13,10 @@ import { PageNotFoundComponent } from './layout/page-not-found/page-not-found.co
 import { LoginComponent } from './enrollment/login/login.component';
 import { SigninComponent } from './enrollment/signin/signin.component';
 import { ForgotPasswordComponent } from './enrollment/forgot-password/forgot-password.component';
-import { DashboardComponent } from './home/dashboard/dashboard.component';
-import { ProfileComponent } from './home/profile/profile.component';
+import { AppLayoutComponent } from './app-layout/app-layout.component';
+import { AppLoginLayoutComponent } from './app-login-layout/app-login-layout.component';
+import { LoginHeaderComponent } from './login-header/login-header.component';
+
 
 @NgModule({
   declarations: [
@@ -27,11 +30,13 @@ import { ProfileComponent } from './home/profile/profile.component';
     LoginComponent,
     SigninComponent,
     ForgotPasswordComponent,
-    DashboardComponent,
-    ProfileComponent
+    AppLayoutComponent,
+    AppLoginLayoutComponent,
+    LoginHeaderComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule

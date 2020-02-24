@@ -3,6 +3,7 @@ import { FormBuilder, FormsModule, FormGroup, Validators } from '@angular/forms'
 import { SignInModel } from './signin.model';
 import { RegistrationTable } from 'src/app/common/registration-table';
 import { Router } from '@angular/router';
+import { SigninService } from './signin.service';
 
 @Component({
   selector: 'app-signin',
@@ -42,37 +43,49 @@ export class SigninComponent implements OnInit {
     confirmPassword: ['', [Validators.required]],
     referralCode: ['', Validators.required]
   });
-  constructor(private fb: FormBuilder,
-    private router: Router) { }
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private signInService: SigninService
+    ) { }
 
   ngOnInit(): void {
-  }
-  onSubmit(): void {
-    this.formSubmitted = true;
-    this.formToModelMapping();
-    if(this.registeredMembers.length != 0){
-      this.registeredMembers.forEach(member =>{
-        if(member.email === this.signInModel.email || member.userName === this.signInModel.userName){
-          this.signInSuccess = false;
-        }
-      });
-      if(!this.signInSuccess){
-        this.registeredMembers.push(this.signInModel);
-        this.signInSuccess = true;
-        setTimeout(()=>{
-          this.router.navigate(['login'])
-        },5000);
-      }
-    }else{
-      this.registeredMembers.push(this.signInModel);
-      this.signInSuccess = true;
-      setTimeout(()=>{
-        this.router.navigate(['login'])
-      },5000);
-    }
     
-    console.log(this.formSubmitted, this.signInSuccess);
-    console.log(this.registeredMembers);
+  }
+  // onSubmit(): void {
+  //   this.formSubmitted = true;
+  //   this.formToModelMapping();
+  //   if(this.registeredMembers.length != 0){
+  //     this.registeredMembers.forEach(member =>{
+  //       if(member.email === this.signInModel.email || member.userName === this.signInModel.userName){
+  //         this.signInSuccess = false;
+  //       }
+  //     });
+  //     if(!this.signInSuccess){
+  //       this.registeredMembers.push(this.signInModel);
+  //       this.signInSuccess = true;
+  //       setTimeout(()=>{
+  //         this.router.navigate(['login'])
+  //       },5000);
+  //     }
+  //   }else{
+  //     this.registeredMembers.push(this.signInModel);
+  //     this.signInSuccess = true;
+  //     setTimeout(()=>{
+  //       this.router.navigate(['login'])
+  //     },5000);
+  //   }
+    
+  //   console.log(this.formSubmitted, this.signInSuccess);
+  //   console.log(this.registeredMembers);
+  // }
+
+  onSubmit(): void {
+    this.formToModelMapping();
+    this.signInService.signIn(this.signInModel)
+    .subscribe( res => {
+      console.log(res);
+    });
   }
 
 

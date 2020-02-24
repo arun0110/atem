@@ -7,17 +7,33 @@ import { PageNotFoundComponent } from './layout/page-not-found/page-not-found.co
 import { LoginComponent } from './enrollment/login/login.component';
 import { SigninComponent } from './enrollment/signin/signin.component';
 import { ForgotPasswordComponent } from './enrollment/forgot-password/forgot-password.component';
-import { DashboardComponent } from './home/dashboard/dashboard.component';
-
+import { HomeModule } from './modules/home/home.module';
+import { AppLayoutComponent } from './app-layout/app-layout.component';
+import { AppLoginLayoutComponent } from './app-login-layout/app-login-layout.component';
 
 const routes: Routes = [
-  {path: '', component: LandingComponent},
-  {path: 'about-us', component: AboutUsComponent},
-  {path: 'contact-us', component: ContactUsComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'signin', component: SigninComponent},
-  {path: 'forgot-password', component: ForgotPasswordComponent},
-  {path: 'home', component: DashboardComponent},
+  {
+    path: '',
+    component: AppLoginLayoutComponent,
+    children :[
+        {path: '', component: LandingComponent},
+        {path: 'about-us', component: AboutUsComponent},
+        {path: 'contact-us', component: ContactUsComponent},
+        {path: 'login', component: LoginComponent},
+        {path: 'signin', component: SigninComponent},
+        {path: 'forgot-password', component: ForgotPasswordComponent}
+    ]
+  },
+  {
+    path: 'home',
+    component: AppLayoutComponent,
+    children: [
+    {
+      path: '',
+    loadChildren: () => HomeModule
+    }
+    ]
+  },
   {path: '**', component: PageNotFoundComponent}
 ];
 
