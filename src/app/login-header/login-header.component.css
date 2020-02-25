@@ -1,0 +1,40 @@
+.navbar{
+    font-size: 1.4rem;
+    min-height: 80px;
+    background-color: black;
+    border-bottom: solid #eb6e34 1px;
+}
+i{
+    padding-right: 3px;
+}
+.mr-auto{
+    margin-left: 3%;
+}
+.active-link{
+    color: white;
+}
+h1{
+    color: #eb6e34;
+    font-size: 3.4rem;
+    margin-left: 10%;
+}
+
+.logout{
+    cursor: pointer;
+}
+
+@media (min-width:360px) and (max-width:767px){
+    h1{
+        color: #eb6e34;
+        font-size: 3rem;
+        margin-left: 2%;
+    }
+    .btn-primary{
+        border-radius: 0%;
+        border: #eb6e34;
+        background-color: #eb6e34;
+        height: 35px;
+        width: 70px;
+        margin-right: -11px;
+    }
+}

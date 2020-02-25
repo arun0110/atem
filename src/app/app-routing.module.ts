@@ -10,13 +10,16 @@ import { ForgotPasswordComponent } from './enrollment/forgot-password/forgot-pas
 import { HomeModule } from './modules/home/home.module';
 import { AppLayoutComponent } from './app-layout/app-layout.component';
 import { AppLoginLayoutComponent } from './app-login-layout/app-login-layout.component';
+import { AuthRouteGuardService } from './auth-route-guard.service';
+
 
 const routes: Routes = [
   {
     path: '',
-    component: AppLoginLayoutComponent,
+    component: AppLayoutComponent,
     children :[
-        {path: '', component: LandingComponent},
+        {path: '', redirectTo: '/welcome', pathMatch: 'full'},
+        {path: 'welcome', component: LandingComponent},
         {path: 'about-us', component: AboutUsComponent},
         {path: 'contact-us', component: ContactUsComponent},
         {path: 'login', component: LoginComponent},
@@ -26,12 +29,13 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: AppLayoutComponent,
+    component: AppLoginLayoutComponent,
+    canActivate: [AuthRouteGuardService],
     children: [
-    {
-      path: '',
-    loadChildren: () => HomeModule
-    }
+      {
+        path: '',
+        loadChildren: () => HomeModule
+      }
     ]
   },
   {path: '**', component: PageNotFoundComponent}

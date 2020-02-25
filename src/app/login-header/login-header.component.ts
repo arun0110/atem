@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-header',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginHeaderComponent implements OnInit {
 
-  constructor() { }
+  userName: string;
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+    this.userName = localStorage.getItem('name');
   }
-
+  
+  logout(): void{
+    localStorage.removeItem('token');
+    localStorage.removeItem('name');
+    this.router.navigate(['welcome']);
+  }
 }

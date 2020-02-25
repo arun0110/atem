@@ -1,0 +1,42 @@
+.container-fluid{
+    overflow:auto;
+    padding-bottom:100px;
+}
+.outer-card{
+    margin: 2%;
+}
+.inner-card{
+    margin: 2%;
+    padding: 1%;
+}
+.table{
+    margin-top: 3%;
+}
+thead{
+    font-size: 1.2rem;
+    background-color: #eb6e34;
+    color: white;
+}
+.my-earnings{
+    margin-top: 2%;
+    color: #eb6e34
+}
+
+@media (min-width:360px) and (max-width:767px){
+     .col-1{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .col-10 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .inner-card{
+        margin: 13%;
+        padding: 5%;
+    }
+    .my-earnings{
+        margin-top: 3%;
+        font-size: 2.2rem;
+    }
+}
