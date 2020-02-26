@@ -8,13 +8,14 @@ import { AnalysisComponent } from './analysis/analysis.component';
 import { LeadershipComponent } from './leadership/leadership.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EarningsComponent } from './earnings/earnings.component';
-
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 @NgModule({
   declarations: [HomeComponent, HistoryComponent, AnalysisComponent, LeadershipComponent, ProfileComponent, EarningsComponent],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    PaginationModule.forRoot()
   ]
 })
 export class HomeModule { }

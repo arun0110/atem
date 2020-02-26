@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./earnings.component.css']
 })
 export class EarningsComponent implements OnInit {
+
+  currentPage = 1;
+  page: number;
+
   currentWeekTestEarnings: number;
   currentWeekReferralEarnings: number;
   TotalTestEarnings: number;
@@ -38,6 +42,9 @@ export class EarningsComponent implements OnInit {
     this.TotalTestEarnings = 234;
     this.currentWeekReferralEarnings = 0;
     this.currentWeekTestEarnings = 86;
+  }
+  pageChanged(event: any): void {
+    this.page = event.page;
   }
 
 }
