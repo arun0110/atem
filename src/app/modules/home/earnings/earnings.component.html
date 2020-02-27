@@ -38,34 +38,41 @@
                         </div>
                     </div>
                 </div>
-                <div class="table-responsive-sm">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <td>S.No</td>
-                                <td>Test Date</td>
-                                <td>Rank</td>
-                                <td>Winnings</td>
-                                <td>Payment Status</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let row of myEarnings">
-                                <td>{{row.sno}}</td>
-                                <td>{{row.testDate}}</td>
-                                <td>{{row.rank}}</td>
-                                <td>{{row.winnings | currency:'INR':true}}</td>
-                                <td>{{row.paymentStatus}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="card table-card">
+                    <div class="table-responsive-sm">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <td>S.No</td>
+                                    <td>Test Date</td>
+                                    <td>Rank</td>
+                                    <td>Winnings</td>
+                                    <td>Payment Status</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let row of pageContent">
+                                    <td>{{row.sno}}</td>
+                                    <td>{{row.testDate}}</td>
+                                    <td>{{row.rank}}</td>
+                                    <td>{{row.winnings | currency:'INR':true}}</td>
+                                    <td>{{row.paymentStatus}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div> 
+                <div class="d-flex justify-content-center">
                     <pagination 
                         [boundaryLinks]="true" 
-                        [totalItems]="19"
+                        [totalItems]="myEarnings.length"
+                        [rotate]="rotate" 
+                        [maxSize]="maxSize"
                         previousText="&lsaquo;" 
                         nextText="&rsaquo;" 
                         firstText="&laquo;" 
-                        lastText="&raquo;">
+                        lastText="&raquo;"
+                        (pageChanged)="pageChanged($event)">
                     </pagination>
                 </div>
             </div>

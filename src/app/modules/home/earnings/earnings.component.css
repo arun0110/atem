@@ -9,18 +9,32 @@
     margin: 2%;
     padding: 1%;
 }
+.table-card{
+    margin: 1%;
+}
 .table{
-    margin-top: 3%;
+    margin-top: 0%;
 }
 thead{
     font-size: 1.2rem;
     background-color: #eb6e34;
     color: white;
 }
+.table td {
+    text-align: center;   
+ }
 .my-earnings{
     margin-top: 2%;
-    color: #eb6e34
+    color: #eb6e34;
 }
+
+/deep/ .page-link { 
+    border-radius: 0% !important;
+    color: #eb6e34;
+}
+
+
+
 
 @media (min-width:360px) and (max-width:767px){
      .col-1{

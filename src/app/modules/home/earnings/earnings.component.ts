@@ -10,7 +10,9 @@ export class EarningsComponent implements OnInit {
 
   currentPage = 1;
   page: number;
-
+  rotate = true;
+  maxSize = 5
+  pageContent = [];
   currentWeekTestEarnings: number;
   currentWeekReferralEarnings: number;
   TotalTestEarnings: number;
@@ -42,9 +44,12 @@ export class EarningsComponent implements OnInit {
     this.TotalTestEarnings = 234;
     this.currentWeekReferralEarnings = 0;
     this.currentWeekTestEarnings = 86;
+    this.pageContent = this.myEarnings.slice(0,10);
   }
   pageChanged(event: any): void {
-    this.page = event.page;
+    const startItem = (event.page - 1) * event.itemsPerPage;
+    const endItem = event.page * event.itemsPerPage;
+    this.pageContent = this.myEarnings.slice(startItem, endItem);
   }
 
 }
