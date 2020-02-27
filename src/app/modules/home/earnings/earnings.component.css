@@ -28,9 +28,35 @@ thead{
     color: #eb6e34;
 }
 
-/deep/ .page-link { 
+/* /deep/ .page-link { 
     border-radius: 0% !important;
     color: #eb6e34;
+} */
+
+/* /deep/ .page-item.active { 
+    
+    color: #eb6e34 !important;
+} */
+/* .earnings-pagination{
+   ::ng-deep{
+       .active{
+           background-color: red !important;
+           color:white !important;
+       }
+   }
+} */
+
+.my-pagination::ng-deep .page-link{
+    border-radius: 0%;
+    color: #eb6e34;
+    margin: 2%;
+}
+.my-pagination::ng-deep .page-item.active .page-link {
+    z-index: 1;
+    color: white;
+    background-color:#eb6e34 !important;
+    border-color: #eb6e34;
+    border-radius: 0%;
 }
 
 

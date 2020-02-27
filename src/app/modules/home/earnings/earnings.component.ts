@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Earning } from './earnings.model';
 
 
 @Component({
@@ -18,6 +19,7 @@ export class EarningsComponent implements OnInit {
   TotalTestEarnings: number;
   TotalReferralEarnings: number;
   myEarnings = [
+    // new Earning(1, new Date(), 2, 34, 'pending')
     {sno:1, testDate: '2020-02-25', rank: 2, winnings: 34, paymentStatus: 'pending'},
     {sno:2, testDate: '2020-02-25', rank: 5, winnings: 21, paymentStatus: 'pending'},
     {sno:3, testDate: '2020-02-25', rank: 7, winnings: 13, paymentStatus: 'success'},
