@@ -38,21 +38,53 @@
                         </div>
                     </div>
                 </div>
+                <div class="row search-dropdown">
+                    <div class="col">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+                        (keyup)="onSearch($event)" >
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <select class="form-control" (change)="numberOfRecords($event)">
+                                <option value="10">10 records per page</option>
+                                <option value="20">20 records per page</option>
+                                <option value="50">50 records per page</option>
+                                <option value="75">75 records per page</option>
+                                <option value="100">100 records per page</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
                 <div class="card table-card">
                     <div class="table-responsive-sm">
                         <table class="table table-hover">
                             <thead>
                                 <tr>
-                                    <td>S.No</td>
-                                    <td>Test Date</td>
-                                    <td>Rank</td>
-                                    <td>Winnings</td>
-                                    <td>Payment Status</td>
+                                    <td (click)="sNoSort()" class="pointer">S.No 
+                                        <i [ngClass]="{'deactivate-icon': !sNoSortIcon}" *ngIf="sNoToggle" class="fa fa-sort-numeric-asc deactivate-icon" aria-hidden="true"></i>
+                                        <i [ngClass]="{'deactivate-icon': !sNoSortIcon}" *ngIf="!sNoToggle" class="fa fa-sort-numeric-desc deactivate-icon" aria-hidden="true"></i>
+                                    </td>
+                                    <td (click)="testDateSort()" class="pointer">Test Date
+                                        <i [ngClass]="{'deactivate-icon': !testDateIcon}" *ngIf="testDateToggle" class="fa fa-sort-numeric-asc deactivate-icon" aria-hidden="true"></i>
+                                        <i [ngClass]="{'deactivate-icon': !testDateIcon}" *ngIf="!testDateToggle" class="fa fa-sort-numeric-desc deactivate-icon" aria-hidden="true"></i>
+                                    </td>
+                                    <td (click)="rankSort()" class="pointer">Rank
+                                        <i [ngClass]="{'deactivate-icon': !rankIcon}" *ngIf="rankToggle" class="fa fa-sort-numeric-asc" aria-hidden="true"></i>
+                                        <i [ngClass]="{'deactivate-icon': !rankIcon}" *ngIf="!rankToggle" class="fa fa-sort-numeric-desc" aria-hidden="true"></i>
+                                    </td>
+                                    <td (click)="winningSort()" class="pointer" >Winnings
+                                        <i [ngClass]="{'deactivate-icon': !winningsIcon}" *ngIf="winningsToggle" class="fa fa-sort-numeric-asc deactivate-icon" aria-hidden="true"></i>
+                                        <i [ngClass]="{'deactivate-icon': !winningsIcon}" *ngIf="!winningsToggle" class="fa fa-sort-numeric-desc deactivate-icon" aria-hidden="true"></i>
+                                    </td>
+                                    <td (click)="paymentStatusSort()" class="pointer">Payment Status
+                                        <i [ngClass]="{'deactivate-icon': !paymentStatusIcon}" *ngIf="paymentStatusToggle" class="fa fa-sort-alpha-asc" aria-hidden="true"></i>
+                                        <i [ngClass]="{'deactivate-icon': !paymentStatusIcon}" *ngIf="!paymentStatusToggle" class="fa fa-sort-alpha-desc" aria-hidden="true"></i>
+                                    </td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr *ngFor="let row of pageContent">
-                                    <td>{{row.sno}}</td>
+                                    <td>{{row.sNo}}</td>
                                     <td>{{row.testDate}}</td>
                                     <td>{{row.rank}}</td>
                                     <td>{{row.winnings | currency:'INR':true}}</td>
@@ -65,9 +97,10 @@
                 <div class="d-flex justify-content-center earnings-pagination">
                     <pagination 
                         [boundaryLinks]="true" 
-                        [totalItems]="myEarnings.length"
+                        [totalItems]="totalItems"
                         [rotate]="rotate" 
                         [maxSize]="maxSize"
+                        [itemsPerPage]="selectedOption"
                         previousText="&lsaquo;" 
                         nextText="&rsaquo;" 
                         firstText="&laquo;" 
@@ -75,6 +108,9 @@
                         (pageChanged)="pageChanged($event)"
                         class="my-pagination">
                     </pagination>
+                </div>
+                <div>
+                    <p class="d-flex justify-content-center"> Showing {{startItem}} - {{endItem}} of {{totalItems}} total</p>
                 </div>
             </div>
         </div>

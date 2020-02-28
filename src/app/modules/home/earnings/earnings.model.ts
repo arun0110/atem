@@ -1,6 +1,6 @@
-export class Earning {
+export class EarningModel {
     sNo: number;
-    testDate: Date;
+    testDate: string;
     rank: number;
     winnings: number;
     paymentStatus: string;
