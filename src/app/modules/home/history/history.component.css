@@ -1,0 +1,110 @@
+.card{
+    border-radius: 0%;
+}
+.container-fluid{
+    overflow:auto;
+    padding-bottom:100px;
+}
+.outer-card{
+    margin: 2%;
+}
+
+.table-card{
+    margin: 1%;
+}
+.table{
+    border-top: solid #eb6e34 1px;
+    margin-top: 0%;
+}
+thead{
+    font-size: 1.2rem;
+    background-color: #eb6e34;
+    color: white;
+}
+.table td {
+    text-align: center;   
+ }
+.my-history{
+    margin-top: 2%;
+    color: #eb6e34;
+}
+.pointer{
+    cursor: pointer;
+}
+.search-dropdown{
+    margin: 1%;
+}
+.search-dropdown input{
+    height: 42px;
+    width: 60%;
+    border-radius: 0%;
+    border: solid black 1px;
+}
+.search-dropdown select{
+    float: right;
+    height: 42px;
+    width: 60%;
+    border-radius: 0%;
+    border: solid black 1px;
+}
+/* /deep/ .page-link { 
+    border-radius: 0% !important;
+    color: #eb6e34;
+} */
+
+/* /deep/ .page-item.active { 
+    
+    color: #eb6e34 !important;
+} */
+/* .earnings-pagination{
+   ::ng-deep{
+       .active{
+           background-color: red !important;
+           color:white !important;
+       }
+   }
+} */
+
+.my-pagination::ng-deep .page-link{
+    border-radius: 0%;
+    color: #eb6e34;
+    margin: 2%;
+}
+.my-pagination::ng-deep .page-item.active .page-link {
+    z-index: 1;
+    color: white;
+    background-color:#eb6e34 !important;
+    border-color: #eb6e34;
+    border-radius: 0%;
+}
+.deactivate-icon{
+    color: rgba(255,255,255,.5);
+}
+
+
+
+
+@media (min-width:360px) and (max-width:767px){
+     .col-1{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .col-10 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .inner-card{
+        margin: 13%;
+        padding: 5%;
+    }
+    .my-earnings{
+        margin-top: 3%;
+        font-size: 2.2rem;
+    }
+    .search-dropdown input{
+        width: 100%;
+    }
+    .search-dropdown select{
+        width: 100%;
+    }
+}
