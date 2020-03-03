@@ -19,6 +19,7 @@
     cursor: pointer;
 }
 .learning-chart{
+    position: relative;
 
 }
 /* .earning-card{

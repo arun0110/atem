@@ -1,1 +1,81 @@
-<p>leadership works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <div class="card outer-card">
+                <h1 class="text-uppercase d-flex justify-content-center leadership">Leadership Board</h1>
+                <div class="row search-dropdown">
+                    <div class="col">
+                        <input class="form-control mr-sm-2"  placeholder="&#xF002; Search" style="font-family:Arial, FontAwesome" aria-label="Search"
+                        (keyup)="onSearch($event)" >
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <select class="form-control" (change)="numberOfRecords($event)">
+                                <option value="10">10 records per page</option>
+                                <option value="20">20 records per page</option>
+                                <option value="50">50 records per page</option>
+                                <option value="75">75 records per page</option>
+                                <option value="100">100 records per page</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="card table-card">
+                    <div class="table-responsive-sm">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <td (click)="rankSort()" class="pointer">Rank
+                                        <i [ngClass]="{'deactivate-icon': !rankIcon}" *ngIf="rankToggle" class="fa fa-sort-numeric-asc deactivate-icon" aria-hidden="true"></i>
+                                        <i [ngClass]="{'deactivate-icon': !rankIcon}" *ngIf="!rankToggle" class="fa fa-sort-numeric-desc deactivate-icon" aria-hidden="true"></i>
+                                    </td>
+                                    <td (click)="nameSort()" class="pointer">Full Name
+                                        <i [ngClass]="{'deactivate-icon': !nameIcon}" *ngIf="nameToggle" class="fa fa-sort-alpha-asc deactivate-icon" aria-hidden="true"></i>
+                                        <i [ngClass]="{'deactivate-icon': !nameIcon}" *ngIf="!nameToggle" class="fa fa-sort-alpha-desc deactivate-icon" aria-hidden="true"></i>
+                                    </td>
+                                    <td (click)="marksSort()" class="pointer">Marks
+                                        <i [ngClass]="{'deactivate-icon': !marksIcon}" *ngIf="marksToggle" class="fa fa-sort-numeric-asc" aria-hidden="true"></i>
+                                        <i [ngClass]="{'deactivate-icon': !marksIcon}" *ngIf="!marksToggle" class="fa fa-sort-numeric-desc" aria-hidden="true"></i>
+                                    </td>
+                                    <td (click)="timeTakenSort()" class="pointer" >Time Taken
+                                        <i [ngClass]="{'deactivate-icon': !timeTakenIcon}" *ngIf="timeTakenToggle" class="fa fa-sort-numeric-asc deactivate-icon" aria-hidden="true"></i>
+                                        <i [ngClass]="{'deactivate-icon': !timeTakenIcon}" *ngIf="!timeTakenToggle" class="fa fa-sort-numeric-desc deactivate-icon" aria-hidden="true"></i>
+                                    </td>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let row of pageContent">
+                                    <td>{{row.rank}}</td>
+                                    <td>{{row.fullName}}</td>
+                                    <td>{{row.marks}}</td>
+                                    <td>{{row.timeTaken }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div> 
+                <div class="d-flex justify-content-center earnings-pagination">
+                    <pagination 
+                        [boundaryLinks]="true" 
+                        [totalItems]="totalItems"
+                        [rotate]="rotate" 
+                        [maxSize]="maxSize"
+                        [itemsPerPage]="selectedOption"
+                        previousText="&lsaquo;" 
+                        nextText="&rsaquo;" 
+                        firstText="&laquo;" 
+                        lastText="&raquo;"
+                        (pageChanged)="pageChanged($event)"
+                        class="my-pagination">
+                    </pagination>
+                </div>
+                <div>
+                    <p class="d-flex justify-content-center"> Showing {{startItem + 1}} - {{endItem}} of {{totalItems}} total</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        

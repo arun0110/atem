@@ -10,57 +10,55 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    
-
-
-
-    // this.earningChart();
+    this.learningChart();
     this.earningChart();
-  }
-
-  learningChart(): void {
-    const ctx = document.getElementById('learning-chart');
-    const chart = new Chart(ctx, {
-      type: 'line',
-      // The data for our dataset
-      data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        }
-    }
-});
   }
 
   earningChart(): void {
     var ctx = document.getElementById('earning-chart');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+            datasets: [{
+                label: 'Earnings',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderColor: [
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            aspectRatio: 1,
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+  }
+
+  learningChart(): void {
+    var ctx = document.getElementById('learning-chart');
     var chart = new Chart(ctx, {
       // The type of chart we want to create
       type: 'line',
@@ -69,7 +67,7 @@ export class HomeComponent implements OnInit {
       data: {
           labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
           datasets: [{
-              label: 'My First dataset',
+              label: 'Marks',
               backgroundColor: 'rgb(255, 99, 132, 0.1)',
               borderColor: '#eb6e34',
               data: [0, 10, 5, 2, 20, 30]
