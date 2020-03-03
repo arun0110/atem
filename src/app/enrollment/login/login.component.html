@@ -25,6 +25,7 @@
                             <div class="form-group">
                                 <label for="password">Password<span>*</span></label>
                                 <input id="password" class="form-control" type="password" formControlName="password">
+                                
                                 <small class="form-text" 
                                     *ngIf="loginForm?.controls.password?.errors?.required &&
                                     loginForm?.controls.password?.touched">

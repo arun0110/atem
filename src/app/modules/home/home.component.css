@@ -1,0 +1,52 @@
+.card{
+    border-radius: 0%;
+}
+.container-fluid{
+    overflow:auto;
+    padding-bottom:100px;
+}
+/* .outer-card{
+    margin: 2%;
+} */
+.banner-card{
+    height: 150px;
+    margin: 1%;
+}
+.graph-card{
+    margin: 1%;
+}
+.pointer{
+    cursor: pointer;
+}
+.learning-chart{
+
+}
+/* .earning-card{
+    width: 400px;
+    height: 400px;
+} */
+.earning-chart{
+    position: relative;
+    /* width: 35vw;
+    height: 35vh; */
+}
+canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+@media (min-width:360px) and (max-width:767px){
+    .col-1{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .col-10 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .earning-chart{
+        width: 75vw;
+        height: 45vh;
+    }
+}
