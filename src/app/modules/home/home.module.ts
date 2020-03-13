@@ -8,7 +8,7 @@ import { AnalysisComponent } from './analysis/analysis.component';
 import { LeadershipComponent } from './leadership/leadership.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EarningsComponent } from './earnings/earnings.component';
-import { AlertModule, PaginationModule } from 'ngx-bootstrap';
+import { AlertModule, PaginationModule, TabsModule  } from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [HomeComponent, HistoryComponent, AnalysisComponent, LeadershipComponent, ProfileComponent, EarningsComponent],
@@ -17,6 +17,7 @@ import { AlertModule, PaginationModule } from 'ngx-bootstrap';
     HomeRoutingModule,
     PaginationModule.forRoot(),
     AlertModule.forRoot(),
+    TabsModule.forRoot()
   ]
 })
 export class HomeModule { }

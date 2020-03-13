@@ -1,1 +1,224 @@
-<p>profile works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <div class="card shadow">
+                <div class="row ">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <h1 class="text-uppercase signin-text d-flex justify-content-center">my profile</h1>
+                        <tabset>
+                            <tab>
+                                <ng-template tabHeading>
+                                    <h5>Personal Details</h5>
+                                </ng-template>
+                                                        <!-- <div *ngIf="formSubmitted && !signInSuccess" class="alert alert-danger alert-dismissible fade show" role="alert">
+                            Entered details already registered with us
+                           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                             <span aria-hidden="true">&times;</span>
+                           </button>
+                       </div>
+                       <div *ngIf="formSubmitted && signInSuccess" class="alert alert-success alert-dismissible fade show" role="alert">
+                           Successfully Registered
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div> -->
+                      <!-- [formGroup] = "signInForm" -->
+                                <form >
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="firstName">FirstName<span>*</span></label>
+                                            <input type="text" class="form-control" id="firstName" formControlName="firstName">
+                                            <!-- <small class="form-text" 
+                                            *ngIf="signInForm?.controls.firstName?.errors?.required &&
+                                            signInForm?.controls.firstName?.touched">
+                                            FirstName is required</small> -->
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="lastName">LastName<span>*</span></label>
+                                            <input type="text" class="form-control" id="lastName" formControlName="lastName">
+                                            <!-- <small class="form-text" 
+                                            *ngIf="signInForm?.controls.lastName?.errors?.required &&
+                                            signInForm?.controls.lastName?.touched">
+                                            LastName is required</small> -->
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="mobile">Mobile<span>*</span></label>
+                                            <input type="text" class="form-control" id="mobile" formControlName="mobile">
+                                            <!-- <small class="form-text" 
+                                            *ngIf="(signInForm?.controls.mobile?.errors?.pattern ||
+                                            signInForm?.controls.mobile?.errors?.minlength ||
+                                            signInForm?.controls.mobile?.errors?.maxlength) &&
+                                            signInForm?.controls.mobile?.touched ">
+                                            Enter correct mobile number</small>
+                                            <small class="form-text" 
+                                            *ngIf="signInForm?.controls.mobile?.errors?.required &&
+                                            signInForm?.controls.mobile?.touched">
+                                            Mobile number required</small>  -->
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="email">Email<span>*</span></label>
+                                            <input type="text" class="form-control" id="email" formControlName="email">
+                                            <!-- <small class="form-text" 
+                                            *ngIf="signInForm?.controls.email?.errors?.email &&
+                                            signInForm?.controls.email?.touched">
+                                            Enter correct email address</small>
+                                            <small class="form-text" 
+                                            *ngIf="signInForm?.controls.email?.errors?.minlength &&
+                                            signInForm?.controls.email?.errors?.maxlength">
+                                            Maximum characters exceeded</small>
+                                            <small class="form-text" 
+                                            *ngIf="signInForm?.controls.email?.errors?.required &&
+                                            signInForm?.controls.email?.touched">
+                                            Email address required</small>  -->
+                                        </div>
+                                    </div>
+                                    <!-- <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="secretQuestion">Secret Question<span>*</span></label>
+                                            <select type="text" class="form-control" id="secretQuestion" formControlName="secretQuestion">
+                                                <option value="" disabled selected>Select Secret Question</option>
+                                                <option value="What is the name of the town/city/village where you were born?">
+                                                    What is the name of the town/city/village where you were born?
+                                                </option>
+                                                <option value="What is your mother’s name?">
+                                                    What is your mother’s name?
+                                                </option>
+                                                <option value="Who is your favorite sports person?">
+                                                    Who is your favorite sports person?
+                                                </option>
+                                                <option value="Who is your role model?">
+                                                    Who is your role model?
+                                                </option>
+                                                <option value="What is your favorite food?">
+                                                    What is your favorite food?
+                                                </option>
+                                                <option value="What is your pet name?">
+                                                    What is your pet name? 
+                                                </option>
+                                            </select>
+                                            <small class="form-text" 
+                                            *ngIf="signInForm?.controls.secretQuestion?.errors?.required &&
+                                            signInForm?.controls.secretQuestion?.touched">
+                                            Secret question required</small>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="secretAnswer">Secret Answer<span>*</span></label>
+                                            <input type="text" class="form-control" id="secretAnswer" formControlName="secretAnswer">
+                                            <small class="form-text" 
+                                            *ngIf="signInForm?.controls.secretAnswer?.errors?.required &&
+                                            signInForm?.controls.secretAnswer?.touched">
+                                            Secret answer required</small>
+                                            <small class="form-text" 
+                                            *ngIf="signInForm?.controls.secretAnswer?.errors?.minlength ||
+                                            signInForm?.controls.secretAnswer?.errors?.maxlength">
+                                            Enter with in 1-30 characters</small>
+                                        </div>
+                                    </div> -->
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="qualification">Qualification<span>*</span></label>
+                                            <select type="text" class="form-control" id="qualification" formControlName="qualification">
+                                                <option value="" disabled selected>Select your Qualification</option>
+                                                <option value="Class 10">Class 10</option>
+                                                <option value="10+2 or Equivalent">10+2 or Equivalent</option>
+                                                <option value="Diploma">Diploma</option>
+                                                <option value="Degree or Equivalent">Degree or Equivalent</option>
+                                                <option value="B.Tech/B.E">B.Tech/B.E</option>
+                                                <option value="Post Graduate">Post Graduate</option>
+                                                <option value="Master's or Equivalent">Master's or Equivalent</option>
+                                                <option value="other">Other</option>
+                                            </select>
+                                            <!-- <small class="form-text" 
+                                            *ngIf="signInForm?.controls.qualification?.errors?.required &&
+                                            signInForm?.controls.qualification?.touched">
+                                            Qualification required</small> -->
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="referralCode">Referral Code</label>
+                                            <input type="text" class="form-control" id="referralCode" formControlName="referralCode">
+                                        </div>
+                                    </div>
+                                    <!-- <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="password">Password<span>*</span></label>
+                                            <input type="password" class="form-control" id="password" formControlName="password">
+                                            <small class="form-text" 
+                                            *ngIf="signInForm?.controls.password?.errors?.required &&
+                                            signInForm?.controls.password?.touched">
+                                            Password required</small>
+                                            <small class="form-text" 
+                                            *ngIf="signInForm?.controls.password?.errors?.minlength ||
+                                            signInForm?.controls.password?.errors?.maxlength">
+                                            Enter with in 8-20 characters</small>
+                                            <small class="form-text" 
+                                            *ngIf="signInForm?.controls.password?.errors?.pattern">
+                                            At least one uppercase letter, one lowercase letter, one number and 
+                                            one special character required</small>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="confirmPassword">Confirm Password<span>*</span></label>
+                                            <input type="password" class="form-control" id="confirmPassword" 
+                                            formControlName="confirmPassword" (ngModelChange) = "confirmPasswordMatching($event)" >
+                                            <small class="form-text" 
+                                            *ngIf="signInForm?.controls.confirmPassword?.errors?.required &&
+                                            signInForm?.controls.confirmPassword?.touched">
+                                            Confirm password required</small>
+                                            <small class="form-text" 
+                                            *ngIf="!passwordMatched && signInForm?.controls.confirmPassword?.touched">
+                                            Confirm password not matched</small>
+                                        </div>
+                                    </div> -->
+                                    
+               
+                                    
+                                    <!-- <div class="d-flex justify-content-center">
+                                        <button type="submit" class="btn btn-secondary text-uppercase" 
+                                            [disabled]="!signInForm.touched"
+                                            (click)="onReset()">
+                                            reset
+                                        </button>
+                                        <button class="btn btn-primary text-uppercase"
+                                        [disabled]="!signInForm.valid && !passwordMatched"
+                                        (click)="onSubmit()">sign in</button>
+                                    </div> -->
+                                    
+                                </form>
+                            </tab>
+                            <tab>
+                                <ng-template tabHeading>
+                                    <h5>Subscription Details</h5>
+                                </ng-template>
+                                Basic content 1
+                            </tab>
+                            <tab>
+                                <ng-template tabHeading>
+                                    <h5>Payment Details</h5>
+                                </ng-template>
+                                Basic content 2
+                            </tab>
+                            <tab>
+                                <ng-template tabHeading>
+                                    <h5>Change Password</h5>
+                                </ng-template>
+                                Basic content 2
+                            </tab>
+                            <tab>
+                                <ng-template tabHeading>
+                                    <h5>Referral Details</h5>
+                                </ng-template>
+                                Basic content 2
+                            </tab>
+                          </tabset>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  
+  

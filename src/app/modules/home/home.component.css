@@ -9,8 +9,23 @@
     margin: 2%;
 } */
 .banner-card{
-    height: 150px;
-    margin: 1%;
+    padding: 2%;
+    /* height: 150px; */
+    margin: 2%;
+}
+.banner-text{
+    font-size: 2rem;
+}
+.btn-primary{
+    margin-left: 1%;
+    border-radius: 0%;
+    border: solid #eb6e34 1px;
+    background-color: #eb6e34;
+    /* width: 20%;
+    height: 55px; */
+    width: auto;
+    height: auto;
+    font-size: 1.6rem;
 }
 .graph-card{
     margin: 1%;
@@ -49,5 +64,19 @@ canvas {
     .earning-chart{
         width: 75vw;
         height: 45vh;
+    }
+    .banner-text{
+        font-size: 1.5rem;
+    }
+    .btn-primary{
+        width: auto;
+        height: auto;
+        font-size: 1.3rem;
+    }
+    h3{
+        font-size: 1.3rem;
+    }
+    .banner-card{
+        margin: 1%;
     }
 }

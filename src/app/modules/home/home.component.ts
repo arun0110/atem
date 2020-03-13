@@ -24,20 +24,20 @@ export class HomeComponent implements OnInit {
                 label: 'Earnings',
                 data: [12, 19, 3, 5, 2, 3],
                 backgroundColor: [
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255, 159, 64, 1)'
+                    'green',
+                    'green',
+                    'green',
+                    'green',
+                    'green',
+                    'green'
                 ],
                 borderColor: [
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255, 159, 64, 1)'
+                    'green',
+                    'green',
+                    'green',
+                    'green',
+                    'green',
+                    'green'
                 ],
                 borderWidth: 1
             }]

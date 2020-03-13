@@ -12,6 +12,7 @@ import { AuthRouteGuardService } from 'src/app/auth-route-guard.service';
 export class LoginComponent implements OnInit {
   formSubmitted = false;
   loginSuccess = false;
+  spinner = false;
   loginForm = this.fb.group({
     username: ['', [Validators.required]],
     password: ['', [Validators.required]]
@@ -29,6 +30,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(): void {
+    this.spinner = true;
     this.loginService.login(this.loginForm.value.username, this.loginForm.value.password)
     .subscribe( (res: any) => {
       this.formSubmitted = true;
@@ -45,6 +47,7 @@ export class LoginComponent implements OnInit {
     err =>{
       this.formSubmitted = true;
       this.loginSuccess = false;
+      this.spinner = false;
       console.log(err);
     })
     // if(this.loginForm.value.username === 'admin' &&
