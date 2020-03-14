@@ -51,7 +51,7 @@ select option:hover{
     margin: 2%;
     padding: 1%;
 }
-.signin-text{
+.my-profile{
     padding: 1%;
     margin: 1%;
     color: #eb6e34;
@@ -129,5 +129,11 @@ h5{
     }
     h5{
         font-size: 0.8rem; 
+    }
+    .display-3{
+        font-size: 1.3rem;
+    }
+    .my-profile{
+        font-size: 1.7rem;
     }
 }
